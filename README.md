@@ -48,7 +48,7 @@ Example: users/solved/1 - Bbox Splitter.js
 
 Example: users/solved/2 - Sampling.js `// linkar aqui o script`
 
-## 4. Execute the Classification Script.
+## 4. Execute the Neural Network.
 ### 4.1. Training
 `Onde está a diferença do modelo de Minas Gerais? Treino? Predição? Os dois?`
 
@@ -75,7 +75,7 @@ Samples      | 8400 |
 Attributes   | SWIR1, NIR1, RED, MNDWI, NDVI and NDSI|
 Classes      | 2 (Mining and Not-Mining)|
 
-###### Table 2 - Classifier attributes and classification parameters. In total, six (6) distinct attributes were used.
+###### Table 2 - CNN attributes and classification parameters. In total, six (6) distinct attributes were used.
 
 Example: users/solved/4 - Mining Classification.ipynb
 `// linkar aqui o script`
