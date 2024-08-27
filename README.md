@@ -77,6 +77,8 @@ Classes      | 2 (Mining and Not-Mining)|
 
 ###### Table 2 - Classifier attributes and classification parameters. In total, six (6) distinct attributes were used.
 
+Example: users/solved/4 - Mining Classification.ipynb
+`// linkar aqui o script`
 
 ## Apply filters
 
