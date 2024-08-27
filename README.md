@@ -1,15 +1,15 @@
 <div class="fluid-row" id="header">
     <div id="column">
         <div class = "blocks">
-            <img src='./misc/solved-logo.jpeg' height='auto' width='200' align='right'>
+            <img src='./misc/solved-logo.jpeg' height='auto' width='165' align='right'>
         </div>
     </div>
     <h1 class="title toc-ignore">Mining</h1>
     <h4 class="author"><em>Solved - Solutions in Geoinformation</em></h4>
 </div>
 
-# About
-This repository provides the steps to classify mining areas using Landsat Top of Atmosphere (TOA) mosaics.
+## About
+This repository provides the steps to detect mining areas using Landsat Top of Atmosphere (TOA) mosaics.
 
 The classification process focuses on identifying mining areas using Landsat TOA mosaics. The process involves generating annual cloud-free mosaics using Google Earth Engine (GEE) and applying a U-Net deep learning model for classification.
 
@@ -20,14 +20,14 @@ For more information about the methodology, please see the [Mining Algorithm The
 * 1.0.0
     * Description -->
 
-# How to use
+## How to use
 
 <!-- ### 1. Prepare environment. 
 1.1. You need to create a GEE repository in the code editor and upload the modules in it. Example: users/solved/index_lib.js -->
 
-## 1. Start the mosaic and Grid generation. 
+### 1. Start the mosaic and Grid generation. 
 
-### 1.1. Start processing the annual cloud free composities
+#### 1.1. Start processing the annual cloud free composities
 Landsat TOA Mosaics:
         Use USGS Landsat Collection 2 Tier 1 TOA imagery.
         Generate annual cloud-free mosaics from January 1st to December 31st from 1985-2023.
@@ -37,26 +37,26 @@ Example: users/solved/0 - Mosaic.js
 `// linkar aqui o script`
 
 
-### 1.2. Cropping
+#### 1.2. Cropping
 Crop mosaics to areas with known mining activities.
         
 Execute the bbox (bounding box) spliter script. The mining class is based on reference grids. These grids were generated based on the reference mining sites (see the reference data section).
 Example: users/solved/1 - Bbox Splitter.js
 
-## 2. Execute the Sampling Script
+#### 2. Execute the Sampling Script
 `// Colocar script GEE de geração / exportação de amostras`
 
 Example: users/solved/2 - Sampling.js `// linkar aqui o script`
 
-## 4. Execute the Neural Network.
-### 4.1. Training
+### 4. Execute the Neural Network.
+#### 4.1. Training
 `Onde está a diferença do modelo de Minas Gerais? Treino? Predição? Os dois?`
 
 Training Samples:
         Select training samples based on mining (Mi) and non-mining (N-Mi) categories.
         No differentiation between artisanal and industrial mining is made during the classification.
 
-### 4.2. Prediction
+#### 4.2. Prediction
 `// Atualizar os parametros e ver se precisamos colocar outra tabela para os parâmetros de MG`
 
 Every classification is a binary set of pixel values. 0 - "non-mining", 1 - "mining"
@@ -80,13 +80,13 @@ Classes      | 2 (Mining and Not-Mining)|
 Example: users/solved/4 - Mining Classification.ipynb
 `// linkar aqui o script`
 
-## Apply filters
+### Apply filters
 
-### Gap-fill
+#### Gap-fill
 Replace no-data values using the nearest available valid class.
 `// linkar aqui o script`
 
-### Temporal filter
+#### Temporal filter
 Temporal Filter: Apply a 3-year moving window to correct temporal inconsistencies.
 Example: users/solved/4 - Temporal Filter.js
 
@@ -98,18 +98,18 @@ Example: users/solved/4 - Temporal Filter.js
 `// linkar aqui o script`
 
 
-### Spatial filter
+#### Spatial filter
 Spatial Filter: Use GEE's connectedPixelCount to remove isolated pixels, ensuring a minimum mapping unit of ~1 ha.
 `// linkar aqui o script`
 
-### Frequency filter
+#### Frequency filter
 Frequency Filter: Remove classes with less than 10% temporal persistence.
 
 Example: users/solved/5 - Frequency Filter.js
 `// linkar aqui o script`
 
-# References
-### REFERENCE DATA
+## References
+#### REFERENCE DATA
 
 Deter: http://terrabrasilis.dpi.inpe.br/ <br>
 
@@ -126,7 +126,7 @@ Ahkbrasilien: https://www.ahkbrasilien.com.br/ <br>
 AMW: https://amazonminingwatch.org/ <br>
 
 ---
-### REFERENCE LITERATURE
+#### REFERENCE LITERATURE
 Bray, E.L.. Bauxite and alumina. U.S. Geol. Surv. Miner. Yearb. 2020.
 
 Deng, Y., Wu, C., Li, M., & Chen, R. (2015). RNDSI: A ratio normalized difference soil index for remote sensing of urban/suburban environments. International Journal of Applied Earth Observation and Geoinformation, 39, 40–48. https://doi.org/https://doi.org/10.1016/j.jag.2015.02.010
