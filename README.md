@@ -1,7 +1,7 @@
 <div class="fluid-row" id="header">
     <div id="column">
         <div class = "blocks">
-            <img src='./misc/solved-logo.jpeg' height='auto' width='165' align='right'>
+            <img src='./misc/solved-logo.jpeg' height='auto' width='200' align='right'>
         </div>
     </div>
     <h1 class="title toc-ignore">Mining</h1>
